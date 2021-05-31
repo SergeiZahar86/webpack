@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="560878da-cc54-4344-8fdd-05b049510dd3" name="Default Changelist" comment="" />
+    <list default="true" id="560878da-cc54-4344-8fdd-05b049510dd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dist/analytics.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +26,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1t79TlmfxLDdZXYsGaKKV7LML8U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,6 +47,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\webpack\dist" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\webpack\src" />
     </key>
@@ -44,11 +62,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622109271222</updated>
-      <workItem from="1622109272294" duration="1640000" />
+      <workItem from="1622109272294" duration="2000000" />
+      <workItem from="1622189698795" duration="1226000" />
+      <workItem from="1622450657991" duration="3238000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2478" y="86" key="CommitChangelistDialog2" timestamp="1622196532638">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2478" y="86" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622196532638" />
+    <state x="2752" y="421" width="431" height="248" key="Github.ShareDialog" timestamp="1622111246043">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2752" y="421" width="431" height="248" key="Github.ShareDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622111246043" />
+    <state x="2698" y="218" key="Github.UntrackedFilesDialog" timestamp="1622111250532">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2698" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622111250532" />
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2" timestamp="1622111260134">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2472" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622111260134" />
+    <state x="2683" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622450736717">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2683" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622450736717" />
   </component>
 </project>
