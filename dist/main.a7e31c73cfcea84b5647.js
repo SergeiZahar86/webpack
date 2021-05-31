@@ -16,7 +16,7 @@
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Post)\n/* harmony export */ });\n\r\n\r\n// экспортируем по дефолту\r\nclass Post {\r\n  constructor(title, img) {\r\n    this.title = title\r\n    this.img = img\r\n    this.date = new Date()\r\n  }\r\n\r\n  toString() {\r\n    return JSON.stringify({\r\n      title: this.title,\r\n      date: this.date.toJSON(),\r\n      img: this.img\r\n    }, null, 2)\r\n  }\r\n\r\n  get uppercaseTitle() {\r\n    return this.title.toUpperCase()\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack://webpack/./src/Post.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Post)\n/* harmony export */ });\n\r\n\r\n// экспортируем по дефолту\r\nclass Post {\r\n  constructor(title, img) {\r\n    this.title = title\r\n    this.img = img\r\n    this.date = new Date()\r\n  }\r\n\r\n  toString() {\r\n    return JSON.stringify({\r\n      title: this.title,\r\n      date: this.date.toJSON(),\r\n      img: this.img\r\n    }, null, 2)\r\n  }\r\n\r\n /* get uppercaseTitle() {\r\n    return this.title.toUpperCase()\r\n  }*/\r\n}\r\n\n\n//# sourceURL=webpack://webpack/./src/Post.js?");
 
 /***/ }),
 
