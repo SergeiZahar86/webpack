@@ -31,10 +31,19 @@ module.exports = {
 		extensions: ['.js', '.json', '.png'],            // указываем расширения по-умолчанию (которые можно не указывать при импорте)
 		alias:                                           // заменяем части относительных путей
 			{
-                '@models': path.resolve(__dirname, 'src/models'),
-                '@': path.resolve(__dirname, 'src'),
-            }
+				'@models': path.resolve(__dirname, 'src/models'),
+				'@': path.resolve(__dirname, 'src'),
+			}
 	},
+	optimization:
+		{
+			// для того чтобы несколько раз не подгружать одну и ту же библиотеку (jquery например,
+			// если она подключена в двух разных файлах)
+			splitChunks:
+				{
+					chunks: "all"
+				}
+		},
 	plugins: [
 		new HTMLWebpackPlugin({
 			//title: "Webpack App",

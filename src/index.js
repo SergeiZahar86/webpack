@@ -16,3 +16,4 @@ console.log('JSON:', json);
 console.log('xml:', xml);
 console.log('csv:', csv);
 console.log( $('.brioso').width());
+$('pre').html(post.toString());
