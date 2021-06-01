@@ -6,6 +6,8 @@ function createAnalytics() {
 
   document.addEventListener('click', listener)
 
+  console.log('test');
+
   return{
     destroy(){
       document.removeEventListener('click', listener)

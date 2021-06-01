@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url("../assets/fonts/Roboto-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'BriosoPro';
+    src: url("../assets/fonts/BriosoPro_Italic.otf") format('truetype');
+}
