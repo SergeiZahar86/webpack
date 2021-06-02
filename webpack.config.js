@@ -1,6 +1,13 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');         // плагин для копирования файлов с места на место
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');  // собирает отдельные файлы css
+
+const isDev = process.env.NODE_ENV === 'development';             // можно указать в каком режиме мы хотим работать
+const isProd = !isDev;
+console.log('IS DEV:', isDev);
+console.log('IS PROD', isProd);
 
 // из package.json
 /*"scripts": {
@@ -44,12 +51,28 @@ module.exports = {
 					chunks: "all"
 				}
 		},
+	devServer: // запускает локальный сервер (обновление страницы происходит автоматически)
+		{
+			port: 4200,
+			hot: isDev
+		},
 	plugins: [
 		new HTMLWebpackPlugin({
 			//title: "Webpack App",
 			template: "./index.html"             // копирует содержимое html файла
 		}),
-		new CleanWebpackPlugin()                 // удаляет не актуальные файлы из папки сборки
+		new CleanWebpackPlugin(),                 // удаляет не актуальные файлы из папки сборки
+		new CopyWebpackPlugin({            // копирует файлы
+			patterns: [
+				{
+					from: path.resolve(__dirname, 'src/money.ico'),
+					to: path.resolve(__dirname, 'dist'),
+				}
+			]
+		}),
+		new MiniCssExtractPlugin({
+			filename: "[name].[contenthash].css"
+		})
 	],
 
 	// подключение загрузчиков (loader) для работы с разными тапами файлов (не только js или json)
@@ -59,7 +82,15 @@ module.exports = {
 				{
 					test: /\.css$/,  // как только webpack встречает это регулярное выражение - будет запущен лоэдер
 					// этот загрузчик работает справа на лево (сначала 'css-loader', затем 'style-loader')
-					use: ['style-loader', 'css-loader']
+					//use: ['style-loader', 'css-loader']  // подключение стилей прямо в html
+					//use: [MineCssExtractPlugin.loader, 'css-loader']   // подключение стилей через отдельный файл css
+					use: [{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: isDev,
+							//reloadAll: true
+						}
+					}, 'css-loader']
 				},
 				{
 					test: /\.(png|jpg|svg|gif)$/,
