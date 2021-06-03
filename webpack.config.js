@@ -3,11 +3,31 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');         // плагин для копирования файлов с места на место
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');  // собирает отдельные файлы css
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');  // минимизация css
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+
 
 const isDev = process.env.NODE_ENV === 'development';             // можно указать в каком режиме мы хотим работать
 const isProd = !isDev;
 console.log('IS DEV:', isDev);
 console.log('IS PROD', isProd);
+
+const optimization = () => {
+	const config = {
+		splitChunks: {
+			chunks: 'all'
+		}
+	}
+	if(isProd){
+		config.minimizer = [
+			new CssMinimizerWebpackPlugin(),
+			new TerserWebpackPlugin()
+		]
+	}
+	return config;
+}
+
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
 // из package.json
 /*"scripts": {
@@ -22,7 +42,7 @@ module.exports = {
 	mode: "development",                               // режим работы webpack. По-умолчанию 'production'
 	entry:                                             // точка входа в наше приложение
 		{
-			main: './index.js',
+			main: ['@babel/polyfill','./index.js'],
 			analytics: './analytics.js'
 		},
 	output:                                            // куда нужно складывать файлы
@@ -31,7 +51,9 @@ module.exports = {
 			//filename: "[name].bundle.js",
 
 			// [contenthash] - паттерн для создания названий исходя из содержимого файла (решается проблема с кешом)
-			filename: "[name].[contenthash].js",
+			//filename: "[name].[contenthash].js",
+			//filename: "[name].[hash].js",
+			filename: filename('js'),
 			path: path.resolve(__dirname, 'dist')      // __dirname - системная переменная. Указываем путь к папке
 		},
 	resolve: {
@@ -42,15 +64,16 @@ module.exports = {
 				'@': path.resolve(__dirname, 'src'),
 			}
 	},
-	optimization:
-		{
-			// для того чтобы несколько раз не подгружать одну и ту же библиотеку (jquery например,
-			// если она подключена в двух разных файлах)
-			splitChunks:
-				{
-					chunks: "all"
-				}
-		},
+	optimization: optimization(),
+	/*{
+		// для того чтобы несколько раз не подгружать одну и ту же библиотеку (jquery например,
+		// если она подключена в двух разных файлах)
+		splitChunks:
+			{
+				chunks: "all"
+			}
+	}*/
+
 	devServer: // запускает локальный сервер (обновление страницы происходит автоматически)
 		{
 			port: 4200,
@@ -59,7 +82,10 @@ module.exports = {
 	plugins: [
 		new HTMLWebpackPlugin({
 			//title: "Webpack App",
-			template: "./index.html"             // копирует содержимое html файла
+			template: "./index.html",             // копирует содержимое html файла
+			minify: {
+				collapseWhitespace: isProd        // минификация
+			}
 		}),
 		new CleanWebpackPlugin(),                 // удаляет не актуальные файлы из папки сборки
 		new CopyWebpackPlugin({            // копирует файлы
@@ -71,7 +97,9 @@ module.exports = {
 			]
 		}),
 		new MiniCssExtractPlugin({
-			filename: "[name].[contenthash].css"
+			//filename: "[name].[contenthash].css"
+			//filename: "[name].[hash].css"
+			filename: filename('css')
 		})
 	],
 
@@ -83,14 +111,46 @@ module.exports = {
 					test: /\.css$/,  // как только webpack встречает это регулярное выражение - будет запущен лоэдер
 					// этот загрузчик работает справа на лево (сначала 'css-loader', затем 'style-loader')
 					//use: ['style-loader', 'css-loader']  // подключение стилей прямо в html
-					//use: [MineCssExtractPlugin.loader, 'css-loader']   // подключение стилей через отдельный файл css
-					use: [{
+					//use: [MiniCssExtractPlugin.loader, 'css-loader']   // подключение стилей через отдельный файл css
+					use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'] // в продакшине стили встраиваются в html
+
+					/*use: [{
 						loader: MiniCssExtractPlugin.loader,
 						options: {
 							hmr: isDev,
-							//reloadAll: true
+							reloadAll: true
 						}
-					}, 'css-loader']
+					}, 'css-loader']*/
+				},
+				{
+					test: /\.less$/,  // как только webpack встречает это регулярное выражение - будет запущен лоэдер
+					// этот загрузчик работает справа на лево (сначала 'css-loader', затем 'style-loader')
+					//use: ['style-loader', 'css-loader']  // подключение стилей прямо в html
+					//use: [MiniCssExtractPlugin.loader, 'css-loader']   // подключение стилей через отдельный файл css
+					use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'] // в продакшине стили встраиваются в html
+
+					/*use: [{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: isDev,
+							reloadAll: true
+						}
+					}, 'css-loader']*/
+				},
+				{
+					test: /\.s[ac]ss$/,  // как только webpack встречает это регулярное выражение - будет запущен лоэдер
+					// этот загрузчик работает справа на лево (сначала 'css-loader', затем 'style-loader')
+					//use: ['style-loader', 'css-loader']  // подключение стилей прямо в html
+					//use: [MiniCssExtractPlugin.loader, 'css-loader']   // подключение стилей через отдельный файл css
+					use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] // в продакшине стили встраиваются в html
+
+					/*use: [{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: isDev,
+							reloadAll: true
+						}
+					}, 'css-loader']*/
 				},
 				{
 					test: /\.(png|jpg|svg|gif)$/,
@@ -108,6 +168,16 @@ module.exports = {
 					test: /\.csv$/,
 					use: ['csv-loader']
 				},
+				{ // лоэдер для бэйбла
+					test: /\.m?js$/,
+					exclude: /node_modules/,
+					use: {
+						loader: "babel-loader",
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
+				}
 			]
 		}
 
