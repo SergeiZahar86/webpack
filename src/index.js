@@ -6,7 +6,7 @@ import json from './assets/json';                                  // импор
 import xml from './assets/data.xml';
 import csv from './assets/data.csv';
 import WebpackLogo from './assets/webpack-logo.png';               // импорт картинок
-import './babel';
+import './JS/babel';
 import './styles/styles.css';                                     // импорт стилей
 import './styles/less.less';
 import './styles/scss.scss';

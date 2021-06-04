@@ -7,7 +7,7 @@ import WebpackLogo from './assets/webpack-logo.png';               // импор
 import React from 'react';
 import {render} from 'react-dom'
 
-import './babel';
+import './JS/babel';
 import './styles/styles.css';                                     // импорт стилей
 import './styles/less.less';
 import './styles/scss.scss';

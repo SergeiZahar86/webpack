@@ -77,8 +77,8 @@ module.exports = {
 	entry:                                             // точка входа в наше приложение
 		{
 			main: ['@babel/polyfill', './index.js', './index.jsx'],
-			analytics: './analytics.js',
-			analyticsTS: './analyticsTS.ts',
+			analytics: './JS/analytics.js',
+			analyticsTS: './JS/analyticsTS.ts',
 		},
 	output:                                            // куда нужно складывать файлы
 		{
@@ -88,7 +88,7 @@ module.exports = {
 			// [contenthash] - паттерн для создания названий исходя из содержимого файла (решается проблема с кешом)
 			//filename: "[name].[contenthash].js",
 			//filename: "[name].[hash].js",
-			filename: filename('js'),
+			filename: `./js/${filename('js')}`,
 			path: path.resolve(__dirname, 'dist')      // __dirname - системная переменная. Указываем путь к папке
 		},
 	resolve: {
