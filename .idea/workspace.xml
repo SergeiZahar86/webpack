@@ -59,18 +59,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\webpack\src\assets" />
-      <recent name="C:\OpenServer\domains\webpack\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\webpack\src\JS" />
       <recent name="C:\OpenServer\domains\webpack\src" />
       <recent name="C:\OpenServer\domains\webpack\src\models" />
       <recent name="C:\OpenServer\domains\webpack\src\assets\fonts" />
       <recent name="C:\OpenServer\domains\webpack\dist" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\webpack\src\assets" />
+      <recent name="C:\OpenServer\domains\webpack\src" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -123,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.stats" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start_dev_server" />
