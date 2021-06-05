@@ -55,6 +55,7 @@ const plugins = () =>
 			//filename: "[name].[contenthash].css"
 			//filename: "[name].[hash].css"
 			filename: filename('css')
+			//filename:`./styles/${filename('css')}`,
 		})
 	]
 	if(isProd){
@@ -165,36 +166,64 @@ module.exports = {
 					//use: [MiniCssExtractPlugin.loader, 'css-loader']   // подключение стилей через отдельный файл css
 					use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'] // в продакшине стили встраиваются в html
 
-					/*use: [{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hmr: isDev,
-							reloadAll: true
-						}
-					}, 'css-loader']*/
+					/*use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								publicPath: (resourcePath, context) => {
+									return path.relative(path.dirname(resourcePath), context) + '/';
+								},
+							}
+						},
+						'css-loader',
+						'lass-loader'
+					],*/
 				},
 				{
 					test: /\.s[ac]ss$/,  // как только webpack встречает это регулярное выражение - будет запущен лоэдер
 					// этот загрузчик работает справа на лево (сначала 'css-loader', затем 'style-loader')
 					//use: ['style-loader', 'css-loader']  // подключение стилей прямо в html
 					//use: [MiniCssExtractPlugin.loader, 'css-loader']   // подключение стилей через отдельный файл css
-					use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] // в продакшине стили встраиваются в html
+					//use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] // в продакшине стили встраиваются в html
 
-					/*use: [{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hmr: isDev,
-							reloadAll: true
-						}
-					}, 'css-loader']*/
+					use: [
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								publicPath: (resourcePath, context) => {
+									return path.relative(path.dirname(resourcePath), context) + '/';
+								},
+							}
+						},
+						'css-loader',
+						'sass-loader'
+					],
 				},
-				{
+				/*{
 					test: /\.(png|jpg|svg|gif)$/,
 					use: ['file-loader']
-				},
+				},*/
 				{
+					test: /\.(?:|gif|png|jpg|jpeg|svg)$/,
+					use: [{
+						loader: 'file-loader',
+						options: {
+							name: `./img/${filename('[ext]')}`
+						}
+					}],
+				},
+				/*{
 					test: /\.(ttf|woff|woff2|eot|otf)$/,
 					use: ['file-loader']
+				},*/
+				{
+					test: /\.(ttf|woff|woff2|eot|otf)$/,
+					use: [{
+						loader: 'file-loader',
+						options: {
+							name: `./fonts/${filename('[ext]')}`
+						}
+					}],
 				},
 				{
 					test: /\.xml$/,

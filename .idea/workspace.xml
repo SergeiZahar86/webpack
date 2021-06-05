@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="560878da-cc54-4344-8fdd-05b049510dd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dist/fonts/BriosoPro_Italic.5358e1df6369d244d28ec0f5e79adf4b.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/fonts/Roboto-Regular.03523cf578d69fa923226ff457b92d90.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/img/webpack-logo.47692505d122dbcae490be2492a60b2e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/money.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/styles/main.c182d1e8bad3f3b8898a.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JS/analytics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analyticsTS.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/JS/analyticsTS.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/babel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JS/babel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.597bd572606a907cbcfd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +92,7 @@
       <recent name="C:\OpenServer\domains\webpack\src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -124,8 +145,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.stats" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start_dev_server" />
@@ -148,6 +169,7 @@
       <workItem from="1622796139866" duration="615000" />
       <workItem from="1622797465487" duration="8000" />
       <workItem from="1622798886640" duration="1080000" />
+      <workItem from="1622874517882" duration="2048000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1622521279040</created>
@@ -204,6 +226,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="5" />
@@ -221,26 +254,30 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2478" y="86" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622798998459" />
-    <state width="1877" height="314" key="GridCell.Tab.0.bottom" timestamp="1622799946619">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1431" height="236" key="GridCell.Tab.0.bottom" timestamp="1622876416829">
+      <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state width="1877" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1622799946619" />
     <state width="1877" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622799255962" />
-    <state width="1877" height="314" key="GridCell.Tab.0.center" timestamp="1622799946618">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1431" height="236" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1622876416829" />
+    <state width="1431" height="236" key="GridCell.Tab.0.center" timestamp="1622876416829">
+      <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state width="1877" height="314" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1622799946618" />
     <state width="1877" height="314" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622799255962" />
-    <state width="1877" height="314" key="GridCell.Tab.0.left" timestamp="1622799946618">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1431" height="236" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1622876416829" />
+    <state width="1431" height="236" key="GridCell.Tab.0.left" timestamp="1622876416829">
+      <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state width="1877" height="314" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1622799946618" />
     <state width="1877" height="314" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622799255962" />
-    <state width="1877" height="314" key="GridCell.Tab.0.right" timestamp="1622799946618">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1431" height="236" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1622876416829" />
+    <state width="1431" height="236" key="GridCell.Tab.0.right" timestamp="1622876416829">
+      <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state width="1877" height="314" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1622799946618" />
     <state width="1877" height="314" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1622799255962" />
+    <state width="1431" height="236" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1622876416829" />
     <state width="1877" height="341" key="GridCell.Tab.1.bottom" timestamp="1622793935088">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
